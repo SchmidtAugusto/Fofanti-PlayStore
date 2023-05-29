@@ -1,11 +1,38 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
 
-Game.create(title: "Dota 2")
-Product.create(name: "Skin Phantom Lancer", description: "Skin foda", price: 24.60, game_id: 1, user_id: 1)
-Order.create(user_id: 2, product_id: 1)
+puts "Initializing seed..."
+
+Product.destroy_all
+Game.destroy_all
+User.destroy_all
+
+puts "Previous instances destroyed."
+
+puts "Seeding..."
+5.times do
+  Game.create(title: Faker::Esport.game)
+  puts Game.last
+end
+
+10.times do
+  User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    trade_url: Faker::Internet.domain_name,
+    email: Faker::Internet.email,
+    password: "123123"
+  )
+  3.times do
+    Product.create(
+      name: Faker::Cannabis.strain,
+      description: Faker::Lorem.characters(number: rand(8...400)),
+      price: (rand * 100).round(2),
+      user_id: User.last.id,
+      game_id: Game.all.sample.id
+    )
+    puts Product.last
+  end
+  puts User.last
+end
+
+puts "Seeding complete!"

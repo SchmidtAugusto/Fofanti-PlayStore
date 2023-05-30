@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+#home-page {
+  gap: 4rem;
+  margin-bottom: 4rem;
+
+  #games-display {
+    gap: 2rem;
+
+    h2{
+      font-weight: 700;
+      font-size: 2rem;
+    }
+  }
+
+  .game-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}

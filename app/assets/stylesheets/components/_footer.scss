@@ -1,0 +1,27 @@
+footer {
+  padding: 5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #5537A9;
+
+  a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer-brand {
+    width: 100px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+  .footer-content {
+    display: grid;
+    gap: 1rem;
+
+    p {
+      color: #FFF;
+    }
+  }
+}

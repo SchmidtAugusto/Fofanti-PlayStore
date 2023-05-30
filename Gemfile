@@ -81,3 +81,4 @@ gem "faker"
 gem "cloudinary"
 
 gem "pundit"
+gem "webpacker"

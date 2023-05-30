@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="home-page" class="d-grid">
+  <section class="banner">
+    <div class="banner-content">
+      <h1>Find the skin of your dreams!</h1>
+      <p>Or sell your items to fellow gamers</p>
+      <div class="buttons">
+        <%= link_to "Browse all products", products_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </section>
+
+  <section id="games-display" class="d-grid container">
+    <h2 class="text-center">Browse items by games</h2>
+    <div class="game-cards-wrapper">
+      <% @games.each do |game| %>
+        <%= link_to products_path do %>
+          <div class="game-card">
+            <h3 class="game-title text-center"><%= game.title %></h3>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </section>
+</div>

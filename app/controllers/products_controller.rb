@@ -52,5 +52,3 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :description, :price, :game_id)
   end
 end
-
-private

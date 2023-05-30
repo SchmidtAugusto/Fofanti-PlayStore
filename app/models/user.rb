@@ -9,5 +9,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :first_name, :last_name, presence: true, length: { minimum: 3 }
-  validates :trade_url, presence: true, uniqueness: true
+  validates :trade_url, :email, presence: true, uniqueness: true
 end

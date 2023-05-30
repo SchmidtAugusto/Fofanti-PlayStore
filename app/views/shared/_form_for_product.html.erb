@@ -1,7 +1,7 @@
-<%= simple_form_for product, url: product_path(product), method: :patch do |f| %>
+<%= simple_form_for(@product) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :price %>
-  <%= f.input :game_id, collection: games, label: "Game", value_method: :id %>
-  <%= f.button :submit %>
+  <%= f.input :game_id, collection: @games, label: "Game", value_method: :id %>
+  <%= f.button :submit, request.fullpath == "/products/new" ? "Criar Produto" : "Editar Produto"  %>
 <% end %>

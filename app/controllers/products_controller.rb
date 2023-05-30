@@ -26,9 +26,17 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
 
   def update
+    @product = Product.find(params[:id])
+
+    if @product.update(product_params)
+      redirect_to @product, notice: 'Produto atualizado com sucesso!'
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -43,5 +51,7 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :price, :game_id)
   end
-
 end
+
+private
+

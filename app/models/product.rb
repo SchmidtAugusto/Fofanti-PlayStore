@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   belongs_to :game
   belongs_to :user
   has_many :orders
+  has_one_attached :photo
 
   validates :name, length: { minimum: 5 }, presence: true
   validates :description, presence: true, length: { minimum: 8, maximum: 400 }

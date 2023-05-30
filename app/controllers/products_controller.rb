@@ -5,7 +5,9 @@ class ProductsController < ApplicationController
     @products = Product.all.order(id: :desc)
   end
 
-  def show; end
+  def show
+    @game = Game.find(@product.game_id)
+  end
 
   def new
   end
@@ -29,7 +31,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :game_id, :user_id)
+    params.require(:product).permit(:name, :description, :price, :game_id)
   end
 
 end

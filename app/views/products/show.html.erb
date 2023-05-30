@@ -1,0 +1,18 @@
+<h1><%= @product.name.capitalize %> item</h1>
+
+<div class="row">
+  <p>Product: <%= @product.name %></p>
+  <p>Description: <%= @product.description %></p>
+  <p>Price: <%= @product.price %></p>
+  <p>Sell by: <%= @product.user.first_name %> <%= @product.user.last_name %></p>
+
+  <% if @game.photo.attached? %>
+    <%= cl_image_tag @game.photo.key, crop: :fill, style: 'max-width: 420px; max-height: 285px', alt: "dropdown menu" %>
+  <% else %>
+    <%= image_tag ("logo.jpg"), crop: :fill, style: 'max-width: 420px; max-height: 285px', alt: "dropdown menu" %>
+  <% end %>
+</div>
+
+
+<%= link_to "Back", products_path%> |
+<%= link_to "Purchase", new_product_order_path(@product) %>

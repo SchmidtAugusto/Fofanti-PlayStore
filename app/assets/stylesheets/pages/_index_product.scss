@@ -1,0 +1,13 @@
+#index-product {
+  h1 {
+    text-align: center;
+    color:rgba(0, 4, 255, 0.938);
+  }
+
+
+  .product-cards-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}

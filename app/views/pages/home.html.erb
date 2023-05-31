@@ -13,7 +13,7 @@
     <h2 class="text-center">Browse items by games</h2>
     <div class="game-cards-wrapper">
       <% @games.each do |game| %>
-        <%= link_to products_path do %>
+        <%= link_to game_path(game) do %>
           <div class="game-card">
             <h3 class="game-title text-center"><%= game.title %></h3>
           </div>

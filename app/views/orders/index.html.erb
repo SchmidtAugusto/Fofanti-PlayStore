@@ -1,6 +1,21 @@
-<h1>My orders</h1>
+<div id="index-product">
+    <h1>My orders</h1>
+    <div class="container">
+      <div class="row product-cards-wrapper">
+        <% @orders.each do |order| %>
+          <% next if order.user_id != current_user.id %>
+          <div>
+            <div class="card">
+            <%= image_tag("logo.jpg", class: "card-img-top", alt: "")%>
+              <div class="card text-center">
+                <h5><%= order.product.name %></h5>
+                <a href="<%= order_path(order) %>" class="btn btn-primary">View Details</a>
+              </div>
+              <%= link_to 'Delete',  order_path(order), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-outline-secondary" %>
+            </div>
+          </div>
+        <% end %>
 
-
-<% @orders.each do |order| %>
-  <%= link_to order.product.name, order_path(order)%> |
-<% end %>
+      </div>
+    </div>
+  </div>

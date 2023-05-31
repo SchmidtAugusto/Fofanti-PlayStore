@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :orders, only: %i[create]
   end
 
-  resources :lists, only: %i[index]
+  resources :lists, only: %i[index show]
 
   resources :orders, only: %i[index show destroy]
 end

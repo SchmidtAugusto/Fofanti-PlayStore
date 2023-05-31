@@ -1,8 +1,8 @@
 <div id="index-product">
-    <% if current_page?(controller: 'games', action: 'show') %>
-      <h1>Items for <%= @game.title %></h1>
-    <% else %>
+    <% if request.env['PATH_INFO'] == "/products" %>
       <h1>All Products</h1>
+    <% else %>
+      <h1>Items for <%= @game.title %></h1>
     <% end %>
     <div class="container">
       <div class="row product-cards-wrapper">

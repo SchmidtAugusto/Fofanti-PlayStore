@@ -9,7 +9,7 @@
   <% if @game.photo.attached? %>
     <%= cl_image_tag @game.photo.key, crop: :fill, style: 'max-width: 420px; max-height: 285px', alt: "dropdown menu" %>
   <% else %>
-    <%= image_tag ("fofantti.png"), crop: :fill, style: 'max-width: 420px; max-height: 285px', alt: "dropdown menu" %>
+    <%= image_tag ("logo.jpg"), crop: :fill, style: 'max-width: 420px; max-height: 285px', alt: "dropdown menu" %>
   <% end %>
 </div>
 

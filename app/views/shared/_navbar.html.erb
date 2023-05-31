@@ -21,9 +21,9 @@
           <li class="nav-item dropdown">
           <a href="" class="avatar m-2" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <% if current_user.photo.attached? %>
-              <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar", alt: "dropdown menu" %>
+              <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar", alt: "img menu" %>
             <% else %>
-              <%= image_tag ("user.png"), crop: :fill, class: "avatar", alt: "dropdown menu" %>
+              <%= image_tag ("user.png"), crop: :fill, class: "avatar", alt: "img menu" %>
             <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

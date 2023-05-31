@@ -9,10 +9,14 @@
   <% if @game.photo.attached? %>
     <%= cl_image_tag @game.photo.key, crop: :fill, style: 'max-width: 420px; max-height: 285px', alt: "dropdown menu" %>
   <% else %>
-    <%= image_tag ("logo.jpg"), crop: :fill, style: 'max-width: 420px; max-height: 285px', alt: "dropdown menu" %>
+    <%= image_tag ("fofantti.png"), crop: :fill, style: 'max-width: 420px; max-height: 285px', alt: "dropdown menu" %>
   <% end %>
 </div>
 
 
-<%= link_to "Back", products_path%> |
-<%= link_to "Purchase", new_product_order_path(@product) %>
+<%= link_to "Back", products_path, class: "btn btn-outline-secondary" %> |
+<%= link_to "Purchase", new_product_order_path(@product), class: "btn btn-outline-secondary" %>
+
+<% if @product.user_id == current_user.id %>
+  | <%= link_to 'Delete',  products_path, data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-outline-secondary" %>
+<% end %>

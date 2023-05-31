@@ -1,0 +1,6 @@
+<h1>My orders</h1>
+
+
+<% @orders.each do |order| %>
+  <%= link_to order.product.name, order_path(order)%> |
+<% end %>

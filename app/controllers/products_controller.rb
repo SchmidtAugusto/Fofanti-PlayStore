@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     @product.user = current_user
 
     if @product.save
-      redirect_to @product
+      redirect_to lists_url
     else
       render :new, status: :unprocessable_entity
     end

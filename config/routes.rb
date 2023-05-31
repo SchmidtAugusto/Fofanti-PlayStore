@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :orders, only: %i[create]
   end
 
+
+  resources :games, only: :show
   resources :lists, only: %i[index show]
 
   resources :orders, only: %i[index show destroy]

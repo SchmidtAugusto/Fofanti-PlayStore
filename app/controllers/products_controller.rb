@@ -27,6 +27,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @games = Game.all
   end
 
   def update
@@ -51,6 +52,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :game_id, :user_id, :photo)
+    params.require(:product).permit(:name, :description, :price, :game, :user_id, :photo)
   end
 end

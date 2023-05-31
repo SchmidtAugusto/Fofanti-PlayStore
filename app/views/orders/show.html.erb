@@ -1,0 +1,13 @@
+<h1>Order from <%= @order.product.name %></h1>
+
+<div class="row">
+  <p>Product: <%= @order.product.name %></p>
+  <p>Description: <%= @order.product.description %></p>
+  <p>Price: <%= @order.product.price %></p>
+  <p>Sell by: <%= @order.product.user.first_name %> <%= @order.product.user.last_name %></p>
+
+</div>
+
+
+<%= link_to "Back", orders_path, class: "btn btn-outline-secondary" %> |
+<%= link_to 'Delete',  order_path(@order), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-outline-secondary" %>

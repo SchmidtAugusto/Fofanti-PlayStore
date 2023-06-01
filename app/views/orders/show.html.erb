@@ -20,8 +20,8 @@
     <p><%= "#{@order.product.user.first_name} #{@order.product.user.last_name}" %></p>
 
     <div class="buttons">
-      <%= link_to "Back", orders_path, class: "btn btn-outline-primary w-100" %>
-      <%= link_to 'Delete',  order_path(@order), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-outline-primary w-100" %>
+      <%= link_to "Back", orders_path, class: "btn btn-primary w-100" %>
+      <%= link_to 'Delete',  order_path(@order), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-primary w-100" %>
     </div>
   </div>
 </div>

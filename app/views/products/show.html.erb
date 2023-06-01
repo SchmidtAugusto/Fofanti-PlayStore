@@ -1,5 +1,4 @@
 <div id="show-product-page">
-
   <div class="product-img">
     <% if @game.photo.attached? %>
       <%= cl_image_tag @game.photo.key, crop: :fill, style: 'max-width: 500px; max-height: 450px', alt: "dropdown menu" %>

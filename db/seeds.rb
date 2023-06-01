@@ -6,12 +6,15 @@ Product.destroy_all
 Game.destroy_all
 User.destroy_all
 
+games = ['CS:GO', 'Dota 2', 'Team Fortress 2', 'Rust',
+         'Final Fantasy XIV', 'Destiny 2', 'Rainbow Six Siege', 'Minecraft']
+
 puts "Previous instances destroyed."
 
 puts "Seeding..."
-5.times do
-  Game.create(title: Faker::Esport.game)
-  puts Game.last
+games.each do |game|
+  Game.create(title: game)
+  puts Game.last.title
 end
 
 10.times do
@@ -30,9 +33,9 @@ end
       user_id: User.last.id,
       game_id: Game.all.sample.id
     )
-    puts Product.last
+    puts Product.last.name
   end
-  puts User.last
+  puts User.last.first_name
 end
 
 puts "Seeding complete!"

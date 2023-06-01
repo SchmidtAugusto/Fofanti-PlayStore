@@ -1,12 +1,47 @@
 #sign-in, #sign-up {
-  margin: 5rem auto;
+  margin: 8rem auto 5rem auto;
   width: 700px;
-  padding: 2rem;
+  padding: 4rem;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.100);
-  background-color: #fff;
+  background-color: $body-color-brighter;
   border-radius: 10px;
+
+  .form-check input:checked {
+    background-color: $base-color-brighter!important;
+    border-color: $base-color!important;
+  }
+
   h1 {
     font-size: 28px;
     text-align: center;
+  }
+
+  input.form-control {
+    background-color: $body-color-brighter;
+    border: 1px solid #888888;
+    color: #e6e2e2;
+  }
+
+  input.form-control:focus {
+    border: 1px solid $base-color;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.100);
+    color: #e6e2e2;
+  }
+
+  .btn-primary {
+    background-color: $base-color-brighter!important;
+    border: 1px solid $base-color!important;
+    &:hover {
+      background-color: #704292!important;
+    }
+  }
+
+  a {
+    color: #e6e2e2;
+    transition: 0.3s;
+
+    &:hover {
+      text-decoration: underline!important;
+    }
   }
 }

@@ -4,11 +4,11 @@
   width: 1200px;
   padding: 2rem;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.100);
-  background-color: #fff;
+  background-color: $body-color-brighter;
   border-radius: 10px;
   display: flex;
   justify-content: flex-start;
-  
+
   h1 {
     font-size: 28px;
     font-weight: 700;

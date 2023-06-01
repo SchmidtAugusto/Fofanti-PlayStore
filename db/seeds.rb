@@ -10,7 +10,7 @@ User.destroy_all
 puts "Previous instances destroyed."
 
 games = [['CS:GO', 'app/assets/images/game-posters/csgo.jpg'], ['Dota 2', 'app/assets/images/game-posters/dota-2.jpg'], ['Team Fortress 2', 'app/assets/images/game-posters/tf2.jpg'], ['Rust', 'app/assets/images/game-posters/rust.webp'],
-         ['Final Fantasy XIV', 'app/assets/images/game-posters/final-fantasy-xiv.png'], ['Unturned', 'app/assets/images/game-posters/Unturned.webp'], ['Rainbow Six Siege', 'app/assets/images/game-posters/r6.jpg'], ['Minecraft', 'app/assets/images/game-posters/minecraft.jpg']]
+         ['Final Fantasy XIV', 'app/assets/images/game-posters/final-fantasy-xiv.jpeg'], ['Unturned', 'app/assets/images/game-posters/Unturned.webp'], ['Rainbow Six Siege', 'app/assets/images/game-posters/r6.jpg'], ['Minecraft', 'app/assets/images/game-posters/minecraft.jpg']]
 
 puts "Seeding..."
 games.each do |game|

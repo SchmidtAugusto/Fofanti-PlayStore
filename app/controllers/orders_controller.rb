@@ -5,7 +5,9 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
-  def show; end
+  def show
+    @game = Game.find(@order.product.game_id)
+  end
 
   def create
     @order = Order.new(product_id: params[:product_id], user_id: current_user.id)

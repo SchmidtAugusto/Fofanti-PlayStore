@@ -20,8 +20,8 @@
     <p><%= "#{@product.user.first_name} #{@product.user.last_name}" %></p>
 
     <div class="buttons">
-      <%= link_to "Back", products_path, class: "btn btn-outline-primary w-100" %>
-      <%= link_to "Purchase",  product_orders_path(@product), data: { turbo_method: :post }, class: "btn btn-outline-primary w-100" %>
+      <%= link_to "Back", products_path, class: "btn btn-primary w-100" %>
+      <%= link_to "Purchase",  product_orders_path(@product), data: { turbo_method: :post }, class: "btn btn-primary w-100" %>
     </div>
   </div>
 </div>

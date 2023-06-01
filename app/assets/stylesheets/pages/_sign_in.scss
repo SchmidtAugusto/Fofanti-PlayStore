@@ -1,5 +1,5 @@
 
-#sign-in, #sign-up, #forgot-password{
+#sign-in, #sign-up, #forgot-password, #new-product-page, #edit-product-page{
   margin: 8rem auto 5rem auto;
   width: 700px;
   padding: 4rem;
@@ -10,6 +10,19 @@
   .form-check input:checked {
     background-color: $base-color-brighter!important;
     border-color: $base-color!important;
+  }
+
+  select, select option{
+    background-color: $body-color-brighter;
+    border: 1px solid #888888;
+    color: #e6e2e2!important;
+  }
+
+  select:focus, select option:focus{
+    background-color: $body-color-brighter;
+    border: 1px solid $base-color;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.100);
+    color: #e6e2e2!important;
   }
 
   h1 {

@@ -14,7 +14,7 @@
             <p class="text-center">Price: $<%= order.product.price %></p>
             <div class="card-btn">
               <a href="<%= order_path(order) %>" class="btn btn-primary col-8 me-2">View Details</a>
-              <%= link_to 'Delete',  order_path(order), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-primary col-4" %>
+              <%= link_to 'Delete',  order_path(order), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-primary" %>
             </div>
           </div>
         <% end %>

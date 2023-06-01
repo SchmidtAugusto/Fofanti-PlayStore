@@ -1,19 +1,22 @@
 <div id="index-product">
     <h1>My lists</h1>
     <div class="container">
-      <div class="row product-cards-wrapper">
+      <div class="row product-cards-wrapper m-5">
         <% @lists.each do |list| %>
           <% next if list.user_id != current_user.id %>
-          <div>
-            <div class="card">
-            <%= image_tag("logo.jpg", class: "card-img-top", alt: "")%>
-              <div class="card text-center">
-                <h5><%= list.name %></h5>
-                <a href="<%= list_path(list) %>" class="btn btn-primary">View Details</a>
+            <div class="card card-block">
+              <% if list.photo.attached? %>
+                <%= cl_image_tag list.photo.key, crop: :fill, style: 'card-img-top;', alt: "dropdown menu", class: "img-border" %>
+              <% else %>
+                <%= image_tag ("logo.jpg"), crop: :fill, style: 'card-img-top;', alt: "dropdown menu", class: "img-border" %>
+              <% end %>
+              <h5 class="text-center mt-2"><%= list.name %></h5>
+              <p class="text-center">Price: $<%= list.price %></p>
+              <div class="card-btn">
+                <a href="<%= list_path(list) %>" class="btn btn-primary col-8 me-2">View Details</a>
+                <%= link_to 'Delete',  product_path(list), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-primary col-4" %>
               </div>
-              <%= link_to 'Delete',  product_path(list), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-outline-secondary" %>
             </div>
-          </div>
         <% end %>
 
       </div>

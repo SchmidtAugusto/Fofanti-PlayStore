@@ -1,19 +1,28 @@
-<h1><%= @product.name.capitalize %> item</h1>
+<div id="show-product-page">
 
-<div class="row">
-  <p>Product: <%= @product.name %></p>
-  <p>Description: <%= @product.description %></p>
-  <p>Price: <%= @product.price %></p>
-  <p>Sell by: <%= @product.user.first_name %> <%= @product.user.last_name %></p>
+  <div class="product-img">
+    <% if @game.photo.attached? %>
+      <%= cl_image_tag @game.photo.key, crop: :fill, style: 'max-width: 500px; max-height: 450px', alt: "dropdown menu" %>
+    <% else %>
+      <%= image_tag ("logo.jpg"), crop: :fill, style: 'max-width: 500px; max-height: 450px', alt: "dropdown menu" %>
+    <% end %>
+  </div>
 
-  <% if @game.photo.attached? %>
-    <%= cl_image_tag @game.photo.key, crop: :fill, style: 'max-width: 420px; max-height: 285px', alt: "dropdown menu" %>
-  <% else %>
-    <%= image_tag ("logo.jpg"), crop: :fill, style: 'max-width: 420px; max-height: 285px', alt: "dropdown menu" %>
-  <% end %>
+  <div class="product-info">
+    <h1><%= @product.name.capitalize %></h1>
+    <h2><%= link_to @product.game.title, game_path(@product.game) %> item</h2>
+
+    <h3>Description:</h3>
+    <p><%= @product.description %></p>
+
+    <h2 class="price">$<%= @product.price %></h2>
+
+    <h3>Owner:</h3>
+    <p><%= "#{@product.user.first_name} #{@product.user.last_name}" %></p>
+
+    <div class="buttons">
+      <%= link_to "Back", products_path, class: "btn btn-outline-primary w-100" %>
+      <%= link_to "Purchase",  product_orders_path(@product), data: { turbo_method: :post }, class: "btn btn-outline-primary w-100" %>
+    </div>
+  </div>
 </div>
-
-
-<%= link_to "Back", products_path, class: "btn btn-outline-secondary" %> |
-<%= link_to "Purchase",  product_orders_path(@product), data: { turbo_method: :post }, class: "btn btn-outline-secondary" %>
-

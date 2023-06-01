@@ -13,11 +13,11 @@
     <h2 class="text-center">Browse items by games</h2>
     <div class="game-cards-wrapper">
       <% @games.each do |game| %>
-        <%= link_to game_path(game) do %>
-          <div class="game-card">
-            <h3 class="game-title text-center"><%= game.title %></h3>
-          </div>
-        <% end %>
+        <div class="game-card">
+          <%= link_to game_path(game) do %>
+            <%= cl_image_tag game.photo.key %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </section>

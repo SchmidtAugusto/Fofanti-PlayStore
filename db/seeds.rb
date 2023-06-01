@@ -7,7 +7,7 @@ Game.destroy_all
 User.destroy_all
 
 games = ['CS:GO', 'Dota 2', 'Team Fortress 2', 'Rust',
-         'Final Fantasy XIV', 'Destiny 2', 'Rainbow Six Siege', 'Minecraft']
+         'Final Fantasy XIV', 'Unturned', 'Rainbow Six Siege', 'Minecraft']
 
 puts "Previous instances destroyed."
 

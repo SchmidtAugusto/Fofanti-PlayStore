@@ -14,8 +14,7 @@
               <h5 class="text-center mt-2"><%= order.product.name %></h5>
               <p class="text-center">Price: $<%= order.product.price %></p>
               <div class="card-btn">
-                <a href="<%= order_path(order) %>" class="btn btn-primary col-8 me-2">View Details</a>
-                <%= link_to 'Delete',  order_path(order), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-primary" %>
+                <a href="<%= order_path(order) %>" class="btn btn-primary col-8 me-2 w-100">View Details</a>
               </div>
             </div>
           <% end %>

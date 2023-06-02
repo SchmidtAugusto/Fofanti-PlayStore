@@ -1,1 +1,5 @@
-<%= render "shared/index_products" %>
+<% if @game.products.empty? %>
+  <%= render "shared/no_product" %>
+<% else %>
+  <%= render "shared/index_products" %>
+<% end %>

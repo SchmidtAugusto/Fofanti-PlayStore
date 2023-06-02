@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[show edit update destroy sold? sold!]
+  before_action :set_product, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     if @product.update(product_params)
-      redirect_to @product, notice: 'Produto atualizado com sucesso!'
+      redirect_to list_path(@product), notice: 'Produto atualizado com sucesso!'
     else
       render :edit
     end

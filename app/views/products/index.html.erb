@@ -1,1 +1,5 @@
-<%= render "shared/index_products" %>
+<% if @products %>
+  <%= render "shared/index_products" %>
+<% else %>
+  <%= render "shared/no_product" %>
+<% end %>

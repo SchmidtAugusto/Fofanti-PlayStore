@@ -1,0 +1,14 @@
+<div id="no-product">
+  <div class="container">
+    <% if request.fullpath.include?("games") %>
+      <h2>There are no products for this game</h2>
+      <%= link_to "View other games", root_path, class: "btn btn-primary" %>
+    <% elsif request.fullpath.include?("orders") %>
+      <h2>You haven't bought any items yet</h2>
+      <%= link_to "Browse items", products_path, class: "btn btn-primary" %>
+    <% else %>
+      <h2>You have no listings :(</h2>
+      <%= link_to "Create your first listing", new_product_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

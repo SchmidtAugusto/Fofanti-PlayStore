@@ -4,7 +4,7 @@
   <%= f.input :price %>
   <%= f.input :game_id, collection: @games, label: "Game", value_method: :id %>
   <%= f.input :photo %>
-  <div class="d-flex">
+  <div class="d-flex gap-3">
     <%= link_to "Cancel", lists_path, class: "btn btn-primary w-100 text-center" %>
     <%= f.button :submit, request.fullpath == "/products/new" ? "Create" : "Edit", class: "btn btn-primary w-100 text-center" %>
   </div>

@@ -1,23 +1,27 @@
 <div id="index-product">
-    <h1>My orders</h1>
-    <div class="container">
-      <div class="row product-cards-wrapper m-5">
-        <% @orders.each do |order| %>
-          <% next if order.user_id != current_user.id %>
-          <div class="card card-block">
-            <% if order.product.photo.attached? %>
-              <%= cl_image_tag order.product.photo.key, crop: :fill, style: 'card-img-top', alt: "dropdown menu", class: "img-border" %>
-            <% else %>
-              <%= image_tag ("logo.jpg"), crop: :fill, style: 'card-img-top', alt: "dropdown menu", class: "img-border" %>
-            <% end %>
-            <h5 class="text-center mt-2"><%= order.product.name %></h5>
-            <p class="text-center">Price: $<%= order.product.price %></p>
-            <div class="card-btn">
-              <a href="<%= order_path(order) %>" class="btn btn-primary col-8 me-2">View Details</a>
-              <%= link_to 'Delete',  order_path(order), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-primary" %>
+    <h1>Purchase history</h1>
+    <% unless @orders.empty? %>
+      <div class="container">
+        <div class="row product-cards-wrapper m-5">
+          <% @orders.each do |order| %>
+            <% next if order.user_id != current_user.id %>
+            <div class="card card-block">
+              <% if order.product.photo.attached? %>
+                <%= cl_image_tag order.product.photo.key, crop: :fill, style: 'card-img-top', alt: "dropdown menu", class: "img-border" %>
+              <% else %>
+                <%= image_tag ("logo.jpg"), crop: :fill, style: 'card-img-top', alt: "dropdown menu", class: "img-border" %>
+              <% end %>
+              <h5 class="text-center mt-2"><%= order.product.name %></h5>
+              <p class="text-center">Price: $<%= order.product.price %></p>
+              <div class="card-btn">
+                <a href="<%= order_path(order) %>" class="btn btn-primary col-8 me-2">View Details</a>
+                <%= link_to 'Delete',  order_path(order), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-primary" %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <%= render "shared/no_product" %>
+    <% end %>
   </div>

@@ -17,10 +17,16 @@
             <li class="nav-item">
               <%= link_to "List new item", new_product_path, class: "btn btn-primary nav-link img-border"%>
             </li>
+          <% elsif request.fullpath == "/orders" %>
+            <li class="nav-item">
+              <%= link_to "Browse items", products_path, class: "btn btn-primary nav-link img-border"%>
+            </li>
           <% end %>
+          <% if request.fullpath != root_path %>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
+          <% end %>
           <li class="nav-item dropdown">
           <a href="" class="avatar m-2" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <% if current_user.photo.attached? %>
@@ -30,8 +36,8 @@
             <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My orders", orders_path, class: "dropdown-item" %>
-              <%= link_to "My lists", lists_path, class: "dropdown-item" %>
+              <%= link_to "Purchase history", orders_path, class: "dropdown-item" %>
+              <%= link_to "My listings", lists_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

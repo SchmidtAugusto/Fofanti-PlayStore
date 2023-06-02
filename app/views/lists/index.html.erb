@@ -1,7 +1,7 @@
 <div id="index-product">
   <div class="container d-flex">
     <h1>My lists</h1>
-    
+
   </div>
   <div class="container">
     <div class="row product-cards-wrapper m-5">
@@ -18,7 +18,7 @@
           <div class="card-btn">
             <a href="<%= list_path(list) %>" class="btn btn-primary col-8 me-2 w-100">View Details</a>
             <% unless list.sold? %>
-              <%= link_to 'Delete',  product_path(list), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-primary w-100" %>
+              <%= link_to 'Delete',  list_path(list), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-primary w-100" %>
             <% end %>
           </div>
         </div>

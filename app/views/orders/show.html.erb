@@ -19,6 +19,9 @@
     <h3>Former owner:</h3>
     <p><%= "#{@order.product.user.first_name} #{@order.product.user.last_name}" %></p>
 
+    <h3>Bought on:</h3>
+    <p><%= @order.created_at.strftime("%d/%m/%Y") %></p>
+
     <div class="buttons">
       <%= link_to "Back", orders_path, class: "btn btn-primary w-100" %>
     </div>

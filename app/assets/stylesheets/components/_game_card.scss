@@ -7,4 +7,10 @@
     border-radius: 10px;
     object-fit: cover;
   }
+
+}
+
+.game-card:hover{
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.05);
 }

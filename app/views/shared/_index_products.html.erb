@@ -1,4 +1,4 @@
-<div id="index-product">
+<div class="index-product">
     <% if request.env['PATH_INFO'] == "/products" %>
       <h1>All Products</h1>
     <% else %>
@@ -9,7 +9,13 @@
         <% @products.each do |product| %>
           <% next if product.sold == true %>
           <div class="card card-block">
-            <%= image_tag("logo.jpg", class: "card-img-top card-img", alt: "")%>
+            <div>
+              <% if product.photo.attached? %>
+                <%= cl_image_tag product.photo.key, crop: :fill, style: 'card-img-top', alt: "dropdown menu", class: "img-border" %>
+              <% else %>
+                <%= image_tag("logo.jpg", class: "card-img-top card-img", alt: "")%>
+              <% end %>
+            </div>
             <h5 class="text-center mt-2"><%= product.name %></h5>
             <p class="text-center">Price: $<%= product.price %></p>
             <a href="<%= product_path(product) %>" class="btn btn-primary">View Details</a>

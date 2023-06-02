@@ -13,11 +13,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <% if request.fullpath == "/lists" %>
+            <li class="nav-item">
+              <%= link_to "List new item", new_product_path, class: "btn btn-primary nav-link img-border"%>
+            </li>
+          <% end %>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
           <a href="" class="avatar m-2" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

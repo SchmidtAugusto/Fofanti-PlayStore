@@ -11,8 +11,10 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(product_id: params[:product_id], user_id: current_user.id)
+    @product = Product.find(params[:product_id])
 
     if @order.save
+      @product.sold!
       redirect_to orders_path
     else
       render :show, status: :unprocessable_entity

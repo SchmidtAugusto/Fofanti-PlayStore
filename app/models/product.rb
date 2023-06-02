@@ -8,4 +8,14 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: { minimum: 8, maximum: 400 }
   validates :price, presence: true
   validates :user_id, :game_id, presence: true
+
+
+  def sold?
+    self.sold
+  end
+
+  def sold!
+    self.sold = true
+    self.save
+  end
 end

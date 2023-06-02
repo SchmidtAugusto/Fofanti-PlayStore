@@ -1,7 +1,7 @@
 <div id="show-product-page">
   <div class="product-img">
     <% if @order.product.photo.attached? %>
-      <%= cl_image_tag @product.photo.key, crop: :fill, style: 'max-width: 500px; max-height: 450px', alt: "dropdown menu" %>
+      <%= cl_image_tag @order.product.photo.key, crop: :fill, style: 'max-width: 500px; max-height: 450px', alt: "dropdown menu" %>
     <% else %>
       <%= image_tag ("logo.jpg"), crop: :fill, style: 'max-width: 500px; max-height: 450px', alt: "dropdown menu" %>
     <% end %>

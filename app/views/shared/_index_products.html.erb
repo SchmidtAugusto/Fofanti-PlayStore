@@ -7,6 +7,7 @@
     <div class="container">
       <div class="row product-cards-wrapper">
         <% @products.each do |product| %>
+          <% next if product.sold == true %>
           <div class="card card-block">
             <%= image_tag("logo.jpg", class: "card-img-top card-img", alt: "")%>
             <h5 class="text-center mt-2"><%= product.name %></h5>

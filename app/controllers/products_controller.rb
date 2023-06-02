@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @products = Product.all.order(id: :desc)
+    @products = Product.all.order(:name)
   end
 
   def show

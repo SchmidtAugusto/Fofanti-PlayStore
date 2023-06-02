@@ -14,7 +14,7 @@
               <% if product.photo.attached? %>
                 <%= cl_image_tag product.photo.key, crop: :fill, style: 'card-img-top', alt: "dropdown menu", class: "img-border" %>
               <% else %>
-                <%= image_tag("logo.jpg", class: "card-img-top card-img", alt: "")%>
+                <%= image_tag("logo.jpg", class: "card-img-top ", alt: "")%>
               <% end %>
             </div>
             <h5 class="text-center mt-2"><%= product.name %></h5>

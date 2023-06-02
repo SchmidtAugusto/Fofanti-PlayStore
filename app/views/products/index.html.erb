@@ -1,4 +1,4 @@
-<% if @products %>
+<% unless @products.empty? %>
   <%= render "shared/index_products" %>
 <% else %>
   <%= render "shared/no_product" %>

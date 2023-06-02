@@ -6,11 +6,13 @@
           <% @orders.each do |order| %>
             <% next if order.user_id != current_user.id %>
             <div class="card card-block">
-              <% if order.product.photo.attached? %>
-                <%= cl_image_tag order.product.photo.key, crop: :fill, style: 'card-img-top', alt: "dropdown menu", class: "img-border" %>
-              <% else %>
-                <%= image_tag ("logo.jpg"), crop: :fill, style: 'card-img-top', alt: "dropdown menu", class: "img-border" %>
-              <% end %>
+              <div class="card-img">
+                <% if order.product.photo.attached? %>
+                  <%= cl_image_tag order.product.photo.key, crop: :fill, style: 'card-img-top', alt: "dropdown menu", class: "img-border" %>
+                <% else %>
+                  <%= image_tag ("logo.jpg"), crop: :fill, style: 'card-img-top', alt: "dropdown menu", class: "img-border" %>
+                <% end %>
+              </div>
               <h5 class="text-center mt-2"><%= order.product.name %></h5>
               <p class="text-center">Price: $<%= order.product.price %></p>
               <div class="card-btn">
